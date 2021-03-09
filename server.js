@@ -1,4 +1,4 @@
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+//process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 var express = require('express');  
 var app = express();  
@@ -7,57 +7,48 @@ var io = require('socket.io')(server);
 var fs = require('fs');
 var https = require('https');
 
-
-
-
 server.listen(5000, function () {
   console.log('Server listening at port %d', 5000);
 });
-
+  
 const opts = {
-key: fs.readFileSync('secure/actions.gq_2021-03-01-15-59_09.key'),
-        cert: fs.readFileSync('secure/actions.gq_2021-03-01-15-59_09.crt')
+	key: fs.readFileSync('secure/actions.gq_2021-03-01-15-59_09.key'),
+	cert: fs.readFileSync('secure/actions.gq_2021-03-01-15-59_09.crt')
 }
-
-
-
-
+  
 var httpsServer = https.createServer(opts, app);
+
 httpsServer.listen(5001, function(){
   console.log("HTTPS on port " + 5001);
 })
-
+/*
 app.get('/', function (req, res) {
- //   res.render('/',{roomId:12});
   console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>connected');
 })
-
-
+*/
+/*
 app.get('/:room', (req, res) => {
   res.render('index', { roomId: req.params.room })
 })
-
-
+*/
 
 io.attach(httpsServer);
-io.attach(server);
-
+//io.attach(server);
+/*
 io.on('connection', function(client) {  
     
-
     client.send("Hello!");
     
- 		client.on("join-room", function(roomId, userId){
-				console.log(roomId, userId);
-					client.emit('connected', userId);
-				
-				client.join(roomId);
-				client.to(roomId).broadcast.emit('connected', userId);
-				
-				
-  
-				});
-    
+	client.on("join-room", function(roomId, userId){
+		console.log(roomId, userId);
+		client.emit('connected', userId);
+
+		client.join(roomId);
+		client.to(roomId).broadcast.emit('connected', userId);
+		
+		
+	});
+    /*
     console.log('Client connected...');
     client.on('click', function(data){
       console.log(JSON.parse(data));
@@ -65,24 +56,36 @@ io.on('connection', function(client) {
           client.emit("ok", "data");
         }, 3000);
     })
+	*/
+	/*
 });
+*/ 
+io.on('connection', socket => {
+  socket.on('join-room', (roomId, userId) => {
+	  console.log(userId);
+    socket.join(roomId)
+    socket.to(roomId).broadcast.emit('connected', userId)
 
-    
+    socket.on('disconnect', () => {
+      socket.to(roomId).broadcast.emit('disconnected', userId)
+    })
+  })
+})
 
-  const {PeerServer} = require('peer');
+const {PeerServer} = require('peer');
 
 const peerServer = PeerServer({
-  port: 5005,
-    path: '/',
-  ssl: {
-    key: fs.readFileSync('secure/actions.gq_2021-03-01-15-59_09.key'),
-    cert: fs.readFileSync('secure/actions.gq_2021-03-01-15-59_09.crt')
-  }
+	port: 5005,
+	path: '/',
+	ssl: {
+		key: fs.readFileSync('secure/actions.gq_2021-03-01-15-59_09.key'),
+		cert: fs.readFileSync('secure/actions.gq_2021-03-01-15-59_09.crt')
+	}
 });
   
-  peerServer.on('signal', function(data){
-      console.log(data);
-  });
+peerServer.on('signal', function(data){
+  console.log(data);
+});
 
 
 

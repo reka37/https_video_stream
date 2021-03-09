@@ -1,0 +1,87 @@
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Darker chat container */
+.darker {
+    border-color: #ccc;
+    background-color: #ddd;
+}
+
+/* Clear floats */
+.container::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Style images */
+.container img {
+    float: left;
+    max-width: 60px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+/* Style the right image */
+.container img.right {
+    float: right;
+    margin-left: 20px;
+    margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+    float: right;
+    color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+    float: left;
+    color: #999;
+}
+
+ ul {
+    list-style-type: none; /* Заглавные буквы */
+   }
+   
+.chat {
+	 width:300px;
+ }  
+   
+   .icon {
+  display: inline-block;
+  height: 1.5em;
+  width: 1.5em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1 em 1 em;
+  font-size: 20px;
+  border: none; 
+  background-color:white;
+}
+   p img {
+	 
+   }
+   .icon-smiley {
+	    border: double 1 px white; 
+		
+  background-image: url("https://twemoji.maxcdn.com/2/svg/1f603.svg"); 
+}  
+
+#balls img{
+	width:30px;
+	height:30px;
+	margin-top:13px;		
+}
+#balls{
+	display:none;		
+}

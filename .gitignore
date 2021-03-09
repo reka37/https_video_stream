@@ -1,3 +1,5 @@
 /node_modules
 /secure
-
+/vendor
+/.phpdoc
+/config
