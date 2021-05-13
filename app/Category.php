@@ -8,6 +8,8 @@ class Category extends Model
 {
     protected $fillable = [
 		'name', 
-		'isVisiable'
+		'isVisiable',
+		'seo_url',
+		'seo_description'
 	];
 }

@@ -4,10 +4,11 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Администратор</title>
-            <link href="{{ asset('public/css/styles.css')}}" rel="stylesheet" />
+        <meta name="description" content="Регистрация на сайте помощи программистам" />
+        <meta name="author" content="irek.ml" />
+        <title>Регистрация</title>
+		<link href="{{ asset('public/css/styles.css')}}" rel="stylesheet" />
+		<link rel="apple-touch-icon" href="{{ asset('public/favicon.ico')}}" type="image/x-icon">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
@@ -21,12 +22,10 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Регистрация</h3></div>
                                     <div class="card-body">                                   
 										<form role="form" method="POST" action="{{ url('/register') }}">
-										{{ csrf_field() }}
-										
+										{{ csrf_field() }}										
 											<div class="form-group">
 												<label class="small mb-1" for="name">Имя</label>
 												<input id="name" type="text" class="form-control py-4" name="name" required autofocus>
-
 												@if ($errors->has('name'))
 												<span class="help-block">
 												<strong>{{ $errors->first('name') }}</strong>
@@ -36,7 +35,6 @@
 											<div class="form-group">
 												<label class="small mb-1" for="email">Email</label>
 												<input class="form-control py-4" id="email" name="email" type="email" value="{{ old('email') }}" required autofocus placeholder="Введите email адресс" />
-
 												@if ($errors->has('email'))
 												<span class="help-block">
 												<strong>{{ $errors->first('email') }}</strong>
@@ -46,13 +44,11 @@
 											<div class="form-group">
 												<label class="small mb-1" for="password">Пароль</label>
 												<input class="form-control py-4" id="password" type="password" name="password" required placeholder="Введите пароль" />
-
 												@if ($errors->has('password')) 
 												<span class="help-block">
 												<strong>{{ $errors->first('password') }}</strong>
 												</span>
 												@endif	
-
 												<div class="form-group">
 												<label class="small mb-1" for="password-confirm">Подтвердите пароль</label>
 												<div class="form-group">
@@ -80,13 +76,3 @@
 		<script src="{{ asset('public/js/scripts.js')}}"></script>
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-

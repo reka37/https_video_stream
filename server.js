@@ -1,4 +1,4 @@
-//process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 var express = require('express');  
 var app = express();  
@@ -7,33 +7,27 @@ var io = require('socket.io')(server);
 var fs = require('fs');
 var https = require('https');
 
-server.listen(5000, function () {
-  console.log('Server listening at port %d', 5000);
+server.listen(5015, function () {
+  console.log('Server listening at port %d', 5015);
 });
-  
+    
 const opts = {
-	key: fs.readFileSync('secure/actions.gq_2021-03-01-15-59_09.key'),
-	cert: fs.readFileSync('secure/actions.gq_2021-03-01-15-59_09.crt')
+	key: fs.readFileSync('secure/irek.ml_2021-03-09-21-17_06.key'),
+	cert: fs.readFileSync('secure/irek.ml_2021-03-09-21-17_06.crt')
 }
+  
   
 var httpsServer = https.createServer(opts, app);
 
-httpsServer.listen(5001, function(){
-  console.log("HTTPS on port " + 5001);
+httpsServer.listen(5016, function(){
+  console.log("HTTPS on port " + 5016);
 })
-/*
-app.get('/', function (req, res) {
-  console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>connected');
-})
-*/
-/*
-app.get('/:room', (req, res) => {
-  res.render('index', { roomId: req.params.room })
-})
-*/
+
 
 io.attach(httpsServer);
-//io.attach(server);
+io.attach(server);
+
+
 /*
 io.on('connection', function(client) {  
     
@@ -60,6 +54,7 @@ io.on('connection', function(client) {
 	/*
 });
 */ 
+/*
 io.on('connection', socket => {
   socket.on('join-room', (roomId, userId) => {
 	  console.log(userId);
@@ -71,25 +66,37 @@ io.on('connection', socket => {
     })
   })
 })
-
+*/
+/*
 const {PeerServer} = require('peer');
 
 const peerServer = PeerServer({
 	port: 5005,
 	path: '/',
 	ssl: {
-		key: fs.readFileSync('secure/actions.gq_2021-03-01-15-59_09.key'),
-		cert: fs.readFileSync('secure/actions.gq_2021-03-01-15-59_09.crt')
+		key: fs.readFileSync('secure/irek.ml_2020-11-28-22-22_56.key'),
+	cert: fs.readFileSync('secure/irek.ml_2020-11-28-22-22_56.key')
 	}
 });
   
 peerServer.on('signal', function(data){
   console.log(data);
 });
+*/
+
+var Redis = require ('ioredis');
+
+redis = new Redis();
+redis.psubscribe('*', function(event, count){
+    
+});
 
 
-
-
+redis.on('pmessage', function(pattern, chanell, message){
+	message = JSON.parse(message);
+	io.emit(chanell + ':' + message.event, message.data.message);
+    console.log(chanell, message);
+});
 
 /*
 

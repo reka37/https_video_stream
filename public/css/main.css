@@ -116,8 +116,8 @@ input, select, textarea {
 /* Type */
 
 	body, input, select, textarea {
-		color: #646464;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		color: black;
+		font-family: sans-serif;
 		font-size: 14pt;
 		font-weight: 400;
 		line-height: 1.75;
@@ -3417,7 +3417,8 @@ input, select, textarea {
 		margin: 0 0 1em 0;
 		overflow: hidden;
 		position: relative;
-		width: 4em;
+		height: 8em;
+	//	width:10em;
 	}
 
 		#intro .logo:before {

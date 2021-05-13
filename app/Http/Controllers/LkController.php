@@ -6,13 +6,28 @@ use Illuminate\Http\Request;
 use App\Posts;
 use App\User;
 use App\Message;
+use App\Category;
 
 class LkController extends Controller
 {
-	public function Index(){	
+	public function Index(){	 
 		$users = User::all();		
 		$posts = Posts::all();	
-		return view('indexlk', ['posts' => $posts, 'users' => $users]);
+		$categories = Category::where('isVisiable', '=', 1)->get();
+		
+		$url = 'https://www.it-world.ru/it-news/tech/?rss=Y'; 
+		$rss = simplexml_load_file($url);
+		$it_worlds = $rss->channel->item;
+		$url = 'https://lenta.ru/rss/top7'; 
+		$rss = simplexml_load_file($url);
+		$lenta = $rss->channel->item;	
+		
+		return view('indexlk', [
+			'it_worlds' => $it_worlds,
+			'lenta' => $lenta,
+			'users' => $users,
+			'categories' => $categories
+		]);
     }
 	
 	public function Video(Request $request){

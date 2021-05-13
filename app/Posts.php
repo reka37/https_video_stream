@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Posts extends Model
 {
-    protected $fillable = ['data', 'count_likes', 'isComments', 'category_id'];
+    protected $fillable = ['data', 'name', 'count_likes', 'isComments', 'category_id', 'image', 'seo_url'];
 }

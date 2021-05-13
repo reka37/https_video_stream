@@ -34,7 +34,7 @@
 		<script>
                var id = {{ $id }};
 			
-                var socket = io(':6050'),
+                var socket = io(':5016'),
 				channel = 'chat:message';
               
 			  socket.on('connect', function(){

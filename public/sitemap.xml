@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>https://irek.ml/</loc>
+	<lastmod>2021-04-29T10:50:38+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://irek.ml/header</loc>
+	<lastmod>2021-04-29T10:50:39+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://irek.ml/php</loc>
+	<lastmod>2021-04-29T10:50:42+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://irek.ml/javascripts</loc>
+	<lastmod>2021-04-29T10:50:43+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://irek.ml/fraimworks</loc>
+	<lastmod>2021-04-29T10:50:43+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://irek.ml/learnphp</loc>
+	<lastmod>2021-04-29T10:50:47+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://irek.ml/login</loc>
+	<lastmod>2021-04-29T10:50:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://irek.ml/register</loc>
+	<lastmod>2021-04-29T10:50:44+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://irek.ml/livecomments/sockets_ssl</loc>
+	<lastmod>2021-04-29T10:50:45+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://irek.ml/livecomments/create_webrtc</loc>
+	<lastmod>2021-04-29T10:50:46+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://irek.ml/livecomments/short_wertc</loc>
+	<lastmod>2021-04-29T10:50:51+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://irek.ml/livecomments/add_foreigh_key</loc>
+	<lastmod>2021-04-29T10:50:48+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://irek.ml/livecomments/lite_xpath</loc>
+	<lastmod>2021-04-29T10:50:49+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://irek.ml/livecomments/migration_laravel</loc>
+	<lastmod>2021-04-29T10:50:51+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://irek.ml/livecomments/fraimwork_php</loc>
+	<lastmod>2021-04-29T10:50:52+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://irek.ml/livecomments/abstract_class</loc>
+	<lastmod>2021-04-29T10:50:53+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://irek.ml/livecomments/74</loc>
+	<lastmod>2021-04-29T10:50:52+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://irek.ml/livecomments/value_class</loc>
+	<lastmod>2021-04-29T10:50:53+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://irek.ml/livecomments/73</loc>
+	<lastmod>2021-04-29T10:50:53+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+</urlset>

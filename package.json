@@ -3,6 +3,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "file-system": "^2.2.2",
+    "https": "^1.0.0",
+    "ioredis": "^4.23.0",
     "peer": "^0.6.1",
     "socket.io": "^1.1.1"
   }
